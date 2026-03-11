@@ -7,7 +7,6 @@ import com.bmu1093a.quill.auth.model.dto.register.RegisterResponseDto;
 import com.bmu1093a.quill.auth.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +20,8 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("register")
-    public ResponseEntity<RegisterResponseDto> register(@RequestBody RegisterRequestDto dto){
-       return ResponseEntity.ok(authService.register(dto));
+    public ResponseEntity<RegisterResponseDto> register(@RequestBody RegisterRequestDto dto) {
+        return ResponseEntity.ok(authService.register(dto));
     }
 
     @PostMapping("login")
